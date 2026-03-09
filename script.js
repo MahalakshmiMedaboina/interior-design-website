@@ -29,3 +29,21 @@ link.addEventListener("click", () => {
 navMenu.classList.remove("active");
 });
 });
+
+const gallery = document.querySelector(".portfolio-gallery");
+const dots = document.querySelectorAll(".gallery-dots .dot");
+
+gallery.addEventListener("scroll", () => {
+
+const scrollLeft = gallery.scrollLeft;
+const width = gallery.clientWidth;
+
+const index = Math.round(scrollLeft / width);
+
+dots.forEach(dot => dot.classList.remove("active"));
+
+if (dots[index]) {
+dots[index].classList.add("active");
+}
+
+});

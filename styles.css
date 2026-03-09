@@ -228,9 +228,42 @@ filter: brightness(90%);
 @media (max-width: 768px) {
 
 .portfolio-gallery {
-grid-template-columns: 1fr;
+display: flex;
+overflow-x: auto;
+gap: 15px;
+scroll-snap-type: x mandatory;
+padding-bottom: 10px;
 }
 
+.portfolio-gallery img {
+width: 280px;
+flex-shrink: 0;
+border-radius: 10px;
+scroll-snap-align: start;
+}
+
+}
+
+.portfolio-gallery::-webkit-scrollbar {
+display: none;
+}
+
+.gallery-dots {
+display: flex;
+justify-content: center;
+gap: 8px;
+margin-top: 10px;
+}
+
+.dot {
+width: 8px;
+height: 8px;
+background: #ccc;
+border-radius: 50%;
+}
+
+.dot.active {
+background: #c89b6d;
 }
 
 /* TESTIMONIALS */
